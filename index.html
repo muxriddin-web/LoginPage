@@ -34,18 +34,27 @@
     </div>
   </div>
 
-  <script>
-    const loginForm = document.getElementById('loginForm');
-    const bgShapes = document.getElementById('bg-shapes');
-    const container = document.getElementById('login-container');
+<script>
+  const loginForm = document.getElementById('loginForm');
+  const bgShapes = document.getElementById('bg-shapes');
+  const container = document.getElementById('login-container');
 
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // Animatsiyani faollashtirish
-      bgShapes.classList.add('active');
-      container.style.opacity = '0';
-      container.style.transform = 'scale(0.8)';
-    });
-  </script>
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // 1. Animatsiyani boshlash
+    bgShapes.classList.add('active');
+    container.style.opacity = '0';
+    container.style.transform = 'scale(0.8)';
+
+    // 2. 2 soniyadan keyin formani tozalash va qaytarish
+    setTimeout(() => {
+      loginForm.reset(); // Malumotlarni o'chirish
+      bgShapes.classList.remove('active'); // Shakllarni yoyish
+      container.style.opacity = '1';
+      container.style.transform = 'scale(1)';
+    }, 2000); 
+  });
+</script>
 </body>
 </html>
