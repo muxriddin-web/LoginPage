@@ -3,48 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Glass Login</title>
+  <title>Modern Login - Animated</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Harakatlanuvchi zamonaviy shakllar -->
-  <div class="form-bg">
-    <span class="shape shape1"></span>
-    <span class="shape shape2"></span>
-    <span class="shape shape3"></span>
-    <span class="shape shape4"></span>
+  <!-- Shakllar konteyneri -->
+  <div class="form-bg" id="bg-shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+    <div class="shape shape4"></div>
   </div>
 
-  <div class="container">
+  <div class="container" id="login-container">
     <div class="glass-card">
       <h2>Welcome Back</h2>
-      <p>Login to your account</p>
-      <form>
+      <form id="loginForm">
         <div class="input-box">
           <i class="fa-solid fa-user"></i>
-          <input type="text" placeholder="Username or Email" required>
+          <input type="text" placeholder="Username" required>
         </div>
         <div class="input-box">
           <i class="fa-solid fa-lock"></i>
           <input type="password" placeholder="Password" required>
         </div>
-        <button type="submit">
-          Log in <i class="fa-solid fa-arrow-right"></i>
-        </button>
+        <button type="submit">Log in</button>
       </form>
-      
-      <div class="social-links">
-        <p>Or log in with</p>
-        <div class="logos">
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-twitter"></i>
-        </div>
-      </div>
     </div>
   </div>
 
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const bgShapes = document.getElementById('bg-shapes');
+    const container = document.getElementById('login-container');
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Animatsiyani faollashtirish
+      bgShapes.classList.add('active');
+      container.style.opacity = '0';
+      container.style.transform = 'scale(0.8)';
+    });
+  </script>
 </body>
 </html>
