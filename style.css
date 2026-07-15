@@ -7,7 +7,7 @@
 
 body {
   background: #0f172a;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,24 +15,26 @@ body {
 }
 
 /* Glass Card */
+.container {
+  transition: all 0.5s ease;
+  z-index: 10;
+}
+
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   padding: 40px;
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 45px rgba(0,0,0,0.3);
-  width: 380px;
+  width: 350px;
   text-align: center;
   color: white;
-  z-index: 10;
 }
 
-h2 { margin-bottom: 10px; font-weight: 600; }
-p { color: #94a3b8; margin-bottom: 30px; font-size: 0.9rem; }
+h2 { margin-bottom: 25px; }
 
-.input-box { position: relative; margin-bottom: 25px; }
-.input-box i { position: absolute; left: 15px; top: 14px; color: #6366f1; }
+.input-box { position: relative; margin-bottom: 20px; }
+.input-box i { position: absolute; left: 15px; top: 14px; color: #818cf8; }
 .input-box input {
   width: 100%;
   padding: 12px 12px 12px 40px;
@@ -52,35 +54,28 @@ button {
   color: white;
   font-weight: 600;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  margin-top: 10px;
   transition: 0.3s;
 }
 
-button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4); }
-
-/* Harakatlanuvchi shakllar */
-.form-bg { position: absolute; width: 100%; height: 100%; }
+/* Animatsiya qismi */
+.form-bg { position: absolute; width: 100%; height: 100%; z-index: 1; }
 
 .shape {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.6;
-  animation: float 10s infinite alternate ease-in-out;
+  opacity: 0.7;
+  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.shape1 { width: 400px; height: 400px; background: #6366f1; top: -100px; left: -100px; }
+.shape1 { width: 400px; height: 400px; background: #6366f1; top: -50px; left: -50px; }
 .shape2 { width: 300px; height: 300px; background: #a855f7; bottom: -50px; right: -50px; }
-.shape3 { width: 250px; height: 250px; background: #ec4899; top: 40%; right: 10%; }
+.shape3 { width: 250px; height: 250px; background: #ec4899; top: 30%; right: 10%; }
+.shape4 { width: 350px; height: 350px; background: #3b82f6; bottom: 20%; left: 10%; }
 
-@keyframes float {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(50px) scale(1.1); }
-}
-
-/* Responsive */
-@media (max-width: 400px) {
-  .glass-card { width: 90%; }
-}
+/* Tugma bosilgandagi yig'ilish holati */
+.form-bg.active .shape1 { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1.2); }
+.form-bg.active .shape2 { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1.5); }
+.form-bg.active .shape3 { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.8); }
+.form-bg.active .shape4 { top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1); }
