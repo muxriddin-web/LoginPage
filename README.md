@@ -66,7 +66,7 @@ Optimized HTML, CSS, and JavaScript ensure fast loading and smooth interactions.
 ## Clone the Repository
 
 ```bash
-git clone https://github.com/muxriddin-web/modern-login-page.git
+git clone https://github.com/muxriddin-web/LoginPage
 ```
 
 ---
