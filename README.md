@@ -74,7 +74,7 @@ git clone https://github.com/muxriddin-web/LoginPage
 ## Navigate into the Project
 
 ```bash
-cd modern-login-page
+cd modern-LoginPage
 ```
 
 ---
@@ -222,7 +222,7 @@ If you have questions, suggestions, or feedback, feel free to reach out.
 ### Project Repository
 
 ```text
-https://github.com/muxriddin-web/modern-login-page
+https://github.com/muxriddin-web/LoginPage
 ```
 
 ### Author
