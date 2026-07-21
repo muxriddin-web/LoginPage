@@ -74,7 +74,7 @@ git clone https://github.com/muxriddin-web/LoginPage
 ## Navigate into the Project
 
 ```bash
-cd modern-LoginPage
+cd LoginPage
 ```
 
 ---
